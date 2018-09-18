@@ -1,0 +1,56 @@
+#container {
+  width: 1280px;
+  margin: 100px auto;
+}
+
+.white-key {
+  height: 180px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.black-key {
+  cursor: pointer;
+  background: #1b1e21;
+  width: 25px;
+  height: 120px;
+  margin-right: 10px
+}
+
+.white-key:hover, .black-key:hover {
+  background: lightgrey;
+}
+
+.white-key:active, .black-key:active {
+  background: grey;
+}
+
+.keys-container {
+  position: relative;
+}
+
+.black-keys-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 23px;
+}
+
+.white-keys-container {
+  display: flex;
+}
+
+.black-key:nth-child(6),
+.black-key:nth-child(8),
+.black-key:nth-child(16),
+.black-key:nth-child(18) {
+  margin-left: 35px
+}
+
+.black-key:nth-child(3),
+.black-key:nth-child(11),
+.black-key:nth-child(13),
+.black-key:nth-child(21),
+.black-key:nth-child(23) {
+  margin-left: 35px
+}
