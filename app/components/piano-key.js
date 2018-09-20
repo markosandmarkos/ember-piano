@@ -5,7 +5,7 @@ export default Component.extend({
 
   actions: {
     play(sound) {
-      let note = new Audio(`notes/${sound}`);
+      let note = new Audio(`/notes/${sound}`);
       note.play();
     }
   }

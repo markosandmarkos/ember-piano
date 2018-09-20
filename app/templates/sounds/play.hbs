@@ -1,0 +1,9 @@
+<div class="piano-container">
+  <div class="card text-center p-2 shadow-lg">
+    <h2 class="text-left">Real Piano with Ember.js</h2>
+    <div class="keys-container shadow-lg">
+      {{white-keys-container notes=model.whiteNotes class="white-keys-container"}}
+      {{black-keys-container notes=model.blackNotes class="black-keys-container"}}
+    </div>
+  </div>
+</div>
