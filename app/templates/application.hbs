@@ -1,33 +1,39 @@
-{{#bs-navbar type='dark'
-             backgroundColor='dark'
-             collapsed=collapsed
-             onCollapse=(action (mut collapsed) true)
-             onExpand=(action (mut collapsed) false) as |navbar|}}
-  <div class="navbar-header">
-    {{navbar.toggle}}
-    {{#link-to "index" class="navbar-brand"}}Ember.js piano{{/link-to}}
-  </div>
-  {{#navbar.content}}
-    {{#navbar.nav as |nav|}}
-      {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
-      {{#nav.item}}{{#nav.link-to "index"}}Navbars{{/nav.link-to}}{{/nav.item}}
-      {{#nav.dropdown as |dd|}}
-        {{#dd.toggle}}Dropdown <span class="caret"></span>{{/dd.toggle}}
-        {{#dd.menu as |ddm|}}
-          {{#ddm.item}}{{#ddm.link-to "index"}}Home{{/ddm.link-to}}{{/ddm.item}}
-          {{#ddm.item}}{{#ddm.link-to "index"}}Navbars{{/ddm.link-to}}{{/ddm.item}}
-        {{/dd.menu}}
-      {{/nav.dropdown}}
-    {{/navbar.nav}}
-  {{/navbar.content}}
-{{/bs-navbar}}
+<div class="page-header">
+  {{#bs-navbar class="" type='dark' backgroundColor='dark' collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+    <div class="container header-container">
+      <div class="navbar-header">
+        {{navbar.toggle}}
+        {{#link-to "index" class="navbar-brand"}}Ember.js piano{{/link-to}}
+      </div>
+      {{#navbar.content}}
+        {{#navbar.nav as |nav|}}
+          {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
+          {{#nav.item}}{{#nav.link-to "index"}}Navbars{{/nav.link-to}}{{/nav.item}}
+          {{#nav.dropdown as |dd|}}
+            {{#dd.toggle}}Dropdown <span class="caret"></span>{{/dd.toggle}}
+            {{#dd.menu as |ddm|}}
+              {{#ddm.item}}{{#ddm.link-to "index"}}Home{{/ddm.link-to}}{{/ddm.item}}
+              {{#ddm.item}}{{#ddm.link-to "index"}}Navbars{{/ddm.link-to}}{{/ddm.item}}
+            {{/dd.menu}}
+          {{/nav.dropdown}}
+        {{/navbar.nav}}
+      {{/navbar.content}}
+    </div>
+  {{/bs-navbar}}
+</div>
 
-<div id="container">
-  <div class="card text-center p-2 shadow-lg">
-    <h1 class="text-left">Real Piano with Ember.js</h1>
-    <div class="keys-container shadow-lg">
-      {{white-keys-container notes=model.whiteNotes class="white-keys-container"}}
-      {{black-keys-container notes=model.blackNotes class="black-keys-container"}}
+<div class="page-body">
+
+  {{outlet}}
+
+  <div class="piano-container">
+    <div class="card text-center p-2 shadow-lg">
+      <!--<h1 class="text-left">Real Piano with Ember.js</h1>-->
+      <div class="keys-container shadow-lg">
+        {{!white-keys-container notes=model.whiteNotes class="white-keys-container"}}
+        {{!black-keys-container notes=model.blackNotes class="black-keys-container"}}
+      </div>
     </div>
   </div>
+
 </div>
